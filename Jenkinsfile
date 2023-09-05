@@ -1,12 +1,8 @@
 pipeline {
   agent any
-  environment {
-    DIRECTORY_PATH = "C:\\Users\\YOU WU\\Desktop\\deakin\\753\\w6"
-  }
   stages {
     stage('Build') {
       steps {
-        echo "fetch the source code from $DIRECTORY_PATH"
         echo 'compile the code and generate any nfecessary artifacts'
         echo 'Use build automation tools like Maven or npm.'
       }
