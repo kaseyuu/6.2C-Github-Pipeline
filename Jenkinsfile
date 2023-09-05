@@ -1,10 +1,12 @@
 pipeline {
   agent any
+
   environment {
     DIRECTORY_PATH = 'C:\\Users\\YOU WU\\Desktop\\deakin\\753\\w6'
     TESTING_ENVIRONMENT = 'testing-environment'
     PRODUCTION_ENVIRONMENT = 'Kasey'
   }
+
   stages {
     stage('Build') {
       steps {
@@ -47,7 +49,9 @@ pipeline {
         echo "Deploying the code to the production environment: $PRODUCTION_ENVIRONMENT"
       }
     }
-    post {
+  }
+
+  post {
         failure {
             mail to: 'kaseywu130@gmail.com',
             subject: 'Pipeline Failed',
@@ -58,6 +62,5 @@ pipeline {
             subject: 'Pipeline Succeeded',
             body: 'The pipeline has succeeded.',
         }
-    }
   }
 }
