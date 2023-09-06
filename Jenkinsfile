@@ -23,13 +23,13 @@ pipeline {
       }
       post {
         failure {
-          emailext attachmentsPattern: '**/report.html',
+          emailext attachmentsPattern: '**/*.log',
           body: 'Test stage has failed.',
           subject: 'Test Failed',
           to: 'kaseywu130@gmail.com'
         }
         success {
-          emailext attachmentsPattern: '**/report.html',
+          emailext attachmentsPattern: '**/*.log',
           subject: 'Test Succeeded',
           body: 'Test stage has succeeded.',
           to: 'kaseywu130@gmail.com'
@@ -49,13 +49,13 @@ pipeline {
       }
       post {
         failure {
-          emailext attachmentsPattern: '**/report.html',
+          emailext attachmentsPattern: '**/*.log',
           body: 'Security Scan stage has failed.',
           subject: 'Security Scan Failed',
           to: 'kaseywu130@gmail.com'
         }
         success {
-          emailext attachmentsPattern: '**/report.html',
+          emailext attachmentsPattern: '**/*.log',
           subject: 'Security Scan Succeeded',
           body: 'Security Scan stage has succeeded.',
           to: 'kaseywu130@gmail.com'
