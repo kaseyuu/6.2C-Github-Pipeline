@@ -29,9 +29,9 @@ pipeline {
           to: 'kaseywu130@gmail.com'
         }
         success {
-          emailext to: 'kaseywu130@gmail.com',
+          emailext body: 'Test stage has succeeded.',
           subject: 'Test Succeeded',
-          body: 'Test stage has succeeded.'
+          to: 'kaseywu130@gmail.com'
         // subject: 'Test Succeeded',
         // body: 'Test stage has succeeded.',
         // to: 'kaseywu130@gmail.com'
@@ -61,9 +61,9 @@ pipeline {
           subject: 'Security Scan Succeeded',
           body: 'Security Scan stage has succeeded.',
           to: 'kaseywu130@gmail.com'
-          // mail to: 'kaseywu130@gmail.com',
-          // subject: 'Test Succeeded',
-          // body: 'Test stage has succeeded.',
+        // mail to: 'kaseywu130@gmail.com',
+        // subject: 'Test Succeeded',
+        // body: 'Test stage has succeeded.',
         }
       }
     }
