@@ -57,13 +57,13 @@ pipeline {
           to: 'kaseywu130@gmail.com'
         }
         success {
-          // emailext attachmentsPattern: '**/*.log',
-          // subject: 'Security Scan Succeeded',
-          // body: 'Security Scan stage has succeeded.',
-          // to: 'kaseywu130@gmail.com'
-          mail to: 'kaseywu130@gmail.com',
-          subject: 'Test Succeeded',
-          body: 'Test stage has succeeded.',
+          emailext attachmentsPattern: '**/*.log',
+          subject: 'Security Scan Succeeded',
+          body: 'Security Scan stage has succeeded.',
+          to: 'kaseywu130@gmail.com'
+          // mail to: 'kaseywu130@gmail.com',
+          // subject: 'Test Succeeded',
+          // body: 'Test stage has succeeded.',
         }
       }
     }
