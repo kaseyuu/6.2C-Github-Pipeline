@@ -29,10 +29,10 @@ pipeline {
           to: 'kaseywu130@gmail.com'
         }
         success {
-          emailext attachmentsPattern: '**/*.log',
-    subject: 'Test Succeeded',
-    body: 'Test stage has succeeded.',
-    to: 'kaseywu130@gmail.com'
+          mail to: 'kaseywu130@gmail.com',
+          // emailext attachmentsPattern: '**/*.log',
+          subject: 'Test Succeeded',
+          body: 'Test stage has succeeded.'
         }
       }
     }
@@ -55,7 +55,7 @@ pipeline {
           to: 'kaseywu130@gmail.com'
         }
         success {
-          emailext attachmentsPattern: '**/*.log',
+          // emailext attachmentsPattern: '**/*.log',
           subject: 'Security Scan Succeeded',
           body: 'Security Scan stage has succeeded.',
           to: 'kaseywu130@gmail.com'
