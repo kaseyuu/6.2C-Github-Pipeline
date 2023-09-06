@@ -26,13 +26,13 @@ pipeline {
           mail to: 'kaseywu130@gmail.com',
           subject: 'Test Failed',
           body: 'Test stage has failed.',
-          attachmentsPattern: '**/target/*.log'
+          attachmentsPattern: '**/report.html'
         }
         success {
           mail to: 'kaseywu130@gmail.com',
           subject: 'Test Succeeded',
           body: 'Test stage has succeeded.',
-          attachmentsPattern: '**/target/*.log'
+          attachmentsPattern: '**/report.html'
         }
       }
     }
@@ -52,13 +52,13 @@ pipeline {
           mail to: 'kaseywu130@gmail.com',
           subject: 'Security Scan Failed',
           body: 'Security Scan stage has failed.',
-          attachmentsPattern: '**/target/*.log'
+          attachmentsPattern: '**/report.html'
         }
         success {
           mail to: 'kaseywu130@gmail.com',
           subject: 'Security Scan Succeeded',
           body: 'Security Scan stage has succeeded.',
-          attachmentsPattern: '**/target/*.log'
+          attachmentsPattern: '**/report.html'
         }
       }
     }
