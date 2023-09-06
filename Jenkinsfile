@@ -26,7 +26,7 @@ pipeline {
           emailext attachmentsPattern: '**/*.log',
           body: 'Test stage has failed.',
           subject: 'Test Failed',
-          to: 'kaseywu130@gmail.com'
+          mail to: 'kaseywu130@gmail.com'
         }
         success {
           mail to: 'kaseywu130@gmail.com',
@@ -52,13 +52,13 @@ pipeline {
           emailext attachmentsPattern: '**/*.log',
           body: 'Security Scan stage has failed.',
           subject: 'Security Scan Failed',
-          to: 'kaseywu130@gmail.com'
+          mail to: 'kaseywu130@gmail.com'
         }
         success {
           // emailext attachmentsPattern: '**/*.log',
           subject: 'Security Scan Succeeded',
           body: 'Security Scan stage has succeeded.',
-          to: 'kaseywu130@gmail.com'
+          mail to: 'kaseywu130@gmail.com'
         }
       }
     }
