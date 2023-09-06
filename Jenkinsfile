@@ -23,16 +23,16 @@ pipeline {
       }
       post {
         failure {
-          mail to: 'kaseywu130@gmail.com',
-          subject: 'Test Failed',
+          emailext attachmentsPattern: '**/report.html',
           body: 'Test stage has failed.',
-          attachmentsPattern: '**/report.html'
+          subject: 'Test Failed',
+          to: 'kaseywu130@gmail.com'
         }
         success {
-          mail to: 'kaseywu130@gmail.com',
+          emailext attachmentsPattern: '**/report.html',
           subject: 'Test Succeeded',
           body: 'Test stage has succeeded.',
-          attachmentsPattern: '**/report.html'
+          to: 'kaseywu130@gmail.com'
         }
       }
     }
@@ -49,16 +49,16 @@ pipeline {
       }
       post {
         failure {
-          mail to: 'kaseywu130@gmail.com',
-          subject: 'Security Scan Failed',
+          emailext attachmentsPattern: '**/report.html',
           body: 'Security Scan stage has failed.',
-          attachmentsPattern: '**/report.html'
+          subject: 'Security Scan Failed',
+          to: 'kaseywu130@gmail.com'
         }
         success {
-          mail to: 'kaseywu130@gmail.com',
+          emailext attachmentsPattern: '**/report.html',
           subject: 'Security Scan Succeeded',
           body: 'Security Scan stage has succeeded.',
-          attachmentsPattern: '**/report.html'
+          to: 'kaseywu130@gmail.com'
         }
       }
     }
