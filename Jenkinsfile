@@ -29,10 +29,13 @@ pipeline {
           to: 'kaseywu130@gmail.com'
         }
         success {
-          emailext attachmentsPattern: '**/*.log',
+          mail to: 'kaseywu130@gmail.com',
           subject: 'Test Succeeded',
-          body: 'Test stage has succeeded.',
-          to: 'kaseywu130@gmail.com'
+          body: 'Test stage has succeeded.'
+        // emailext attachmentsPattern: '**/*.log',
+        // subject: 'Test Succeeded',
+        // body: 'Test stage has succeeded.',
+        // to: 'kaseywu130@gmail.com'
         }
       }
     }
