@@ -20,6 +20,9 @@ pipeline {
         echo 'unit tests'
         echo 'integration tests'
         echo 'Use test automation tools like Appium or Katalon.'
+        emailext body: 'Test stage has succeeded.',
+          subject: 'Test Succeeded',
+          to: 'kaseywu130@gmail.com'
       }
       post {
         failure {
