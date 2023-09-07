@@ -45,7 +45,7 @@ pipeline {
 
     stage('Security Scan') {
       steps {
-        echo 'Integrate a security scanning tool like OWASP ZAP.'
+        echo 'Integrate a security scanning tool like OWASP ZAP.' >> test.log
       }
       post {
         failure {
