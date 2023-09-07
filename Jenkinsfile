@@ -20,9 +20,6 @@ pipeline {
         echo 'unit tests'
         echo 'integration tests'
         echo 'Use test automation tools like Appium or Katalon.'
-        emailext body: 'Test stage has succeeded.',
-          subject: 'Test Succeeded',
-          to: 'kaseywu130@gmail.com'
       }
       post {
         failure {
@@ -32,12 +29,10 @@ pipeline {
           to: 'kaseywu130@gmail.com'
         }
         success {
-          emailext body: 'Test stage has succeeded.',
+          emailext attachmentsPattern: '**/*.log',
+          body: 'Test stage has succeeded.',
           subject: 'Test Succeeded',
           to: 'kaseywu130@gmail.com'
-        // subject: 'Test Succeeded',
-        // body: 'Test stage has succeeded.',
-        // to: 'kaseywu130@gmail.com'
         }
       }
     }
@@ -64,9 +59,6 @@ pipeline {
           subject: 'Security Scan Succeeded',
           body: 'Security Scan stage has succeeded.',
           to: 'kaseywu130@gmail.com'
-        // mail to: 'kaseywu130@gmail.com',
-        // subject: 'Test Succeeded',
-        // body: 'Test stage has succeeded.',
         }
       }
     }
