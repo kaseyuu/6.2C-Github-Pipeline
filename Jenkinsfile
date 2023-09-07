@@ -24,12 +24,14 @@ pipeline {
       post {
         failure {
           emailext attachmentsPattern: '**/*.log',
+          attachLog: true,
           body: 'Test stage has failed.',
           subject: 'Test Failed',
           to: 'kaseywu130@gmail.com'
         }
         success {
           emailext attachmentsPattern: '**/*.log',
+          attachLog: true,
           body: 'Test stage has succeeded.',
           subject: 'Test Succeeded',
           to: 'kaseywu130@gmail.com'
@@ -45,17 +47,19 @@ pipeline {
 
     stage('Security Scan') {
       steps {
-        echo 'Integrate a security scanning tool like OWASP ZAP.' >> test.log
+        echo 'Integrate a security scanning tool like OWASP ZAP.'
       }
       post {
         failure {
           emailext attachmentsPattern: '**/*.log',
+          attachLog: true,
           body: 'Security Scan stage has failed.',
           subject: 'Security Scan Failed',
           to: 'kaseywu130@gmail.com'
         }
         success {
           emailext attachmentsPattern: '**/*.log',
+          attachLog: true,
           subject: 'Security Scan Succeeded',
           body: 'Security Scan stage has succeeded.',
           to: 'kaseywu130@gmail.com'
