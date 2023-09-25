@@ -32,7 +32,7 @@ pipeline {
         success {
           emailext attachmentsPattern: '**/*.log',
           attachLog: true,
-          body: 'Test stage has succeeded :)',
+          body: 'Test stage has succeeded :(',
           subject: 'Test Succeeded',
           to: 'kaseywu130@gmail.com'
         }
